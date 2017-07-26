@@ -198,6 +198,7 @@ func getField(i interface{}, name string) (string, bool) {
 func (mc *MatchConditions) Matches(ai *AuthRequestInfo) bool {
 	vars := []string{
 		"${account}", regexp.QuoteMeta(ai.Account),
+		"${account_short}", regexp.QuoteMeta(strings.Split(ai.Account, "@")[0]),
 		"${type}", regexp.QuoteMeta(ai.Type),
 		"${name}", regexp.QuoteMeta(ai.Name),
 		"${service}", regexp.QuoteMeta(ai.Service),
